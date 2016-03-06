@@ -1,0 +1,7 @@
+URxvt*font: xft:Inconsolata:size=11
+URxvt*scrollBar: false
+rofi.opacity: 90
+rofi.font: Inconsolata 11
+rofi.columns: 1
+rofi.lines: 7
+rofi.width: 30
