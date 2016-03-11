@@ -11,12 +11,15 @@ Plugin 'flazz/vim-colorschemes'
 call vundle#end()
 filetype plugin indent on 
 
-set encoding=utf-8
-set number
 syntax on
 
+set tabstop=2 shiftwidth=2 expandtab
+set encoding=utf-8
+set number
 
-colorscheme Tomorrow
+
+
+colorscheme jellybeans
 
 
 let mapleader = ","

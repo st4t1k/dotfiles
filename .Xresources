@@ -1,7 +1,28 @@
-URxvt*font: xft:Inconsolata:size=11
+URxvt*font: xft:Hack-Regular:size=10
 URxvt*scrollBar: false
+! Jellybeans Colorscheme
+URxvt*background: #121212
+URxvt*foreground: #d7d7d7
+URxvt*cursorColor: #d7d7d7
+URxvt*color0: #393939
+URxvt*color1: #ca674a
+URxvt*color2: #96a967
+URxvt*color3: #d3a94a
+URxvt*color4: #5778c1
+URxvt*color5: #9c35ac
+URxvt*color6: #6eb5f3
+URxvt*color7: #a9a9a9
+URxvt*color8: #535551
+URxvt*color9: #ea2828
+URxvt*color10: #87dd32
+URxvt*color11: #f7e44d
+URxvt*color12: #6f9bca
+URxvt*color13: #a97ca4
+URxvt*color14: #32dddd
+URxvt*color15: #e9e9e7
+! Rofi config
 rofi.opacity: 90
-rofi.font: Inconsolata 11
+rofi.font: Hack-Regular 11
 rofi.columns: 1
 rofi.lines: 7
 rofi.width: 30
