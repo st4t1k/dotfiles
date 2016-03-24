@@ -1,7 +1,7 @@
 set $mod Mod4
 
-font pango:Inconsolata 8
-for_window [class="^.*"] border pixel 1
+font pango:Roboto 10
+#for_window [class="^.*"] border pixel 1
 
 floating_modifier $mod
 
@@ -82,6 +82,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec ./.lock.sh
 
 # Resize Keys
 mode "resize" {
@@ -138,6 +139,7 @@ bar {
 }
 
 exec_always feh --bg-scale /home/st4t1k/Pictures/yosemite.jpg
+exec dunst
 exec nm-applet
 exec xset -b
 exec --no-startup-id compton -f
