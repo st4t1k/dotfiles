@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'majutsushi/tagbar'
 
@@ -28,8 +27,8 @@ colorscheme jellybeans
 let mapleader = ","
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>sv :source %<CR>
-nnoremap <Leader>t :NERDTreeToggle<cr>
-nnoremap <Leader>tb :TagbarToggle<cr>
+nnoremap <silent> <Leader>t :NERDTreeToggle<cr>
+nnoremap <silent> <Leader>tb :TagbarToggle<cr>
 
 set guioptions-=m
 set guioptions-=T
