@@ -30,6 +30,12 @@ nnoremap <silent> <Leader>sv :source %<CR>
 nnoremap <silent> <Leader>t :NERDTreeToggle<cr>
 nnoremap <silent> <Leader>tb :TagbarToggle<cr>
 
+"Remap window navigation
+nnoremap <silent> <C-j> <C-W>j_
+nnoremap <silent> <C-k> <C-W>k_
+nnoremap <silent> <C-h> <C-W>h_
+nnoremap <silent> <C-l> <C-W>l_
+
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
