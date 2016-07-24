@@ -1,5 +1,5 @@
 [global]
-    font = Roboto 10 
+    font = Hack-Regular 10 
     format = "<b>%s</b>\n%b" 
     sort = yes
     indicate_hidden = yes 
