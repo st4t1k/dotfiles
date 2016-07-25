@@ -1,8 +1,6 @@
 URxvt*scrollBar: false
 URxvt*font: xft:Hack-Regular:size=10
-
-
-
+#Gruvbox Colorscheme
 URxvt*background: #282828
 URxvt*foreground: #ebdbb2
 URxvt*color0:  #282828
