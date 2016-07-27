@@ -2,9 +2,9 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plug 'flazz/vim-colorschemes'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
