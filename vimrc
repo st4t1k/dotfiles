@@ -1,10 +1,14 @@
-call plug#begin()
-
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 Plug 'flazz/vim-colorschemes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
-call plug#end()
+call vundle#end()
+filetype plugin indent on
+syntax on
 
 set number
 set tabstop=2 shiftwidth=2 expandtab
