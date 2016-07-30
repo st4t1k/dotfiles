@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+#exit on command fail
+set -e
+
+dotfiles_path=~/WorkSpace/git/dotfiles
+path=$1
+filename="${path##*/}"
+
+
+if [ ! -f $path ]; then
+    echo "$path not found"
+    exit 1
+fi
+
+if [ ! -d $dotfiles_path ]; then
+    echo "$dotfiles_path not found"
+    exit 1
+fi
+
+cp $path $dotfiles_path
+rm $path 
+ln -s  $dotfiles_path/${path##*/} $path
