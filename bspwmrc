@@ -2,7 +2,6 @@
 
 sxhkd &
 panel &
-compton & 
 
 bspc monitor -d WEB DEV CHAT NULL
 
