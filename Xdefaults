@@ -1,5 +1,5 @@
 URxvt*scrollBar: false
-URxvt*font: xft:Terminus:size=11
+URxvt*font: xft:Terminus:pixelsize=16
 
 #Gruvbox Colorscheme
 URxvt*background: #282828
