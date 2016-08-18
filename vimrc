@@ -7,13 +7,12 @@ call vundle#begin()
 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
 filetype plugin indent on
-syntax on
+"syntax on
 
 """""""""General"""""""""
 set number
@@ -23,9 +22,6 @@ set noswapfile
 set nobackup
 
 """"""""Theming"""""""""" 
-colorscheme gruvbox
-set background=dark
-set t_Co=256
 set laststatus=0
 
 """"""""Mappings"""""""""" 
