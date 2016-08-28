@@ -5,14 +5,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 
 filetype plugin indent on
-"syntax on
+syntax on
 
 """""""""General"""""""""
 set number
@@ -22,6 +25,9 @@ set noswapfile
 set nobackup
 
 """"""""Theming"""""""""" 
+set t_Co=256
+set background=dark
+colorscheme jellybeans
 set laststatus=0
 
 """"""""Mappings"""""""""" 
@@ -37,3 +43,4 @@ nnoremap <silent> <C-l> <C-W>l
 
 nnoremap <silent> <leader>p :CtrlPBuffer<CR>
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>tb :TagbarToggle<CR>
