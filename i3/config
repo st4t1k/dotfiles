@@ -1,7 +1,7 @@
 set $mod Mod4
 
-font pango:Roboto 10
-#for_window [class="^.*"] border pixel 1
+font pango:Hack-Regular 10
+for_window [class="^.*"] border pixel 2
 
 floating_modifier $mod
 
@@ -12,7 +12,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -hide-scrollbar
+bindsym $mod+d exec dmenu_run -b -nb "#282828" -nf "#ebdbb2" -sb "#458588" -sf "#282828"
 
 # change focus
 bindsym $mod+j focus left
@@ -111,37 +111,36 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 
-set $bg-color            #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $bg-color            #458588
+#set $inactive-bg-color   #2f343f
+set $text-color          #ebdbb2
+#set $inactive-text-color #676E7D
+ set $urgent-bg-color     #fb4934
 
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #676E7D
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #676E7D
+#client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
+#client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
+#client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #676E7D
 
 bar {
 
     position top
     status_command i3status
-    font pango:Roboto 10
+    font pango:Hack-Regular 10
 	strip_workspace_numbers yes
 
   colors{
-    background $bg-color
-    separator #757575
-    focused_workspace $text-color $bg-color $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace $urgent-bg-color $urgent-bg-color $text-color
+     background #282828
+     separator $bg-color
+     focused_workspace $bg-color #282828 $text-color
+  #  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+    urgent_workspace $urgent-bg-color #282828 $urgent-bg-color
   }
 }
 
-exec_always feh --bg-scale /home/st4t1k/Pictures/yosemite.jpg
+exec_always feh --bg-scale /home/st4t1k/Pictures/stargazer-full.png
 exec dunst
 exec xset -b
-exec --no-startup-id compton -f
 exec_always setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" 
