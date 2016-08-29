@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='>> '
+PS1='[\u]$ '
 PS2='> '
 PS3='> '
 PS4='+ '
@@ -27,4 +27,3 @@ alias la='ls -1a --color=auto'
 alias ll='ls -la --color=auto'
 alias gs='git status'
 alias gl='git log --oneline'
-alias packnum='pacman -Q|wc -l'
