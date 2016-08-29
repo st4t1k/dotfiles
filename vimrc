@@ -11,6 +11,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'chrisbra/Colorizer'
 
 call vundle#end()
 
@@ -27,7 +28,7 @@ set nobackup
 """"""""Theming"""""""""" 
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+colorscheme gruvbox
 set laststatus=0
 
 """"""""Mappings"""""""""" 
