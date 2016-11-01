@@ -140,7 +140,7 @@ bar {
   }
 }
 
-exec_always feh --bg-scale /home/st4t1k/Pictures/stargazer-full.png
+exec_always feh --bg-scale /home/st4t1k/.wallpaper.jpg
 exec dunst
 exec xset -b
 exec_always setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" 
