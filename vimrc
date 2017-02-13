@@ -1,3 +1,4 @@
+
 """""""Plugins""""""""""""""""
 set nocompatible
 filetype off
@@ -20,9 +21,22 @@ syntax on
 """""""""General"""""""""
 set number
 set tabstop=4 shiftwidth=4 expandtab
+
+" Maintain undo between sessions
+set undofile
+set undodir=~/.vim/undo
+
+" Search 
+set ignorecase
+set smartcase
+set infercase
+set hlsearch
+set incsearch
+
 set encoding=utf-8
 set noswapfile
 set nobackup
+set hidden
 
 """"""""Theming"""""""""" 
 set t_Co=256
@@ -34,6 +48,7 @@ set laststatus=0
 let mapleader=','
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
+nnoremap <leader>nh :nohlsearch<CR>
 nnoremap <silent> <leader>e :E<CR>
 
 nnoremap <silent> <C-j> <C-W>j
