@@ -11,7 +11,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
+Plugin 'pangloss/vim-javascript'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -30,7 +31,6 @@ set undodir=~/.vim/undo
 set ignorecase
 set smartcase
 set infercase
-set hlsearch
 set incsearch
 
 set encoding=utf-8
@@ -48,7 +48,7 @@ set laststatus=0
 let mapleader=','
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
-nnoremap <leader>nh :nohlsearch<CR>
+nnoremap <leader>hl :set hlsearch!<CR>
 nnoremap <silent> <leader>e :E<CR>
 
 nnoremap <silent> <C-j> <C-W>j
