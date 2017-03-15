@@ -1,5 +1,4 @@
-
-"""""""Plugins""""""""""""""""
+"Plugins
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,22 +11,21 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
-Plugin 'w0rp/ale'
 
 call vundle#end()
 
 filetype plugin indent on
 syntax on
 
-"""""""""General"""""""""
+"Show numbers
 set number
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4
 
 " Maintain undo between sessions
 set undofile
 set undodir=~/.vim/undo
 
-" Search 
+"Search 
 set ignorecase
 set smartcase
 set infercase
@@ -38,13 +36,12 @@ set noswapfile
 set nobackup
 set hidden
 
-""""""""Theming"""""""""" 
+"Theming
 set t_Co=256
-set background=dark
-colorscheme gruvbox
+colorscheme seoul256
 set laststatus=0
 
-""""""""Mappings"""""""""" 
+"Mappings
 let mapleader=','
 nnoremap <silent> <leader>w :w<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
@@ -59,3 +56,21 @@ nnoremap <silent> <C-l> <C-W>l
 nnoremap <silent> <leader>p :CtrlPBuffer<CR>
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
+
+"PEP8 tabs for python
+au BufNewFile,BufRead *.py
+    \set tabstop=4
+    \set softtabstop=4
+    \set shiftwidth=4
+	\set textwidth=79
+    \set expandtab
+    \set autoindent
+    \set fileformat=unix
+
+"Tabs for web dev
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+au BufNewFile,BufRead *.py,*.pyw match ExtraWhitespace /\s\+$/
