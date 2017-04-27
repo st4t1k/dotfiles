@@ -6,11 +6,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
@@ -19,7 +20,10 @@ syntax on
 
 "Show numbers
 set number
-set tabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " Maintain undo between sessions
 set undofile
@@ -37,9 +41,14 @@ set nobackup
 set hidden
 
 "Theming
-set t_Co=256
-colorscheme seoul256
-set laststatus=0
+let &t_Co=256
+set background=dark
+colorscheme gruvbox
+set laststatus=2
+
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\}
 
 "Mappings
 let mapleader=','
@@ -72,5 +81,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+	\ set expandtab
 
-au BufNewFile,BufRead *.py,*.pyw match ExtraWhitespace /\s\+$/
+au BufNewFile,BufRead *.py,*.pyw match Error /\s\+$/
