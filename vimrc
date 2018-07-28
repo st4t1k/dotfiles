@@ -1,19 +1,9 @@
-"Plugins
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin ('~/.vim/plugged')
 
-call vundle#begin()
+Plug 'flazz/vim-colorschemes'
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'itchyny/lightline.vim'
-Plugin 'scrooloose/nerdtree'
+call plug#end()
 
-call vundle#end()
 
 filetype plugin indent on
 syntax on
@@ -43,17 +33,15 @@ set hidden
 "Theming
 let &t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme Monokai
 set laststatus=2
+
 "GUI
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-let g:lightline = {
-	\ 'colorscheme': 'wombat',
-	\}
 
 "Mappings
 let mapleader=','
