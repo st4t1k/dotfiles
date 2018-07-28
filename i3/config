@@ -105,35 +105,35 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $bg-color            #458588
-#set $inactive-bg-color   #2f343f
 set $text-color          #ebdbb2
-#set $inactive-text-color #676E7D
- set $urgent-bg-color     #fb4934
+set $urgent-bg-color     #fb4934
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #676E7D
+# Window colors
+#                        border              background         text                 indicator
+client.focused           $bg-color           $bg-color          $text-color          #676E7D
 #client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
 #client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #676E7D
 #client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #676E7D
 
+# Gaps
+
+gaps outer 3
+gaps inner 5
+
 bar {
 
-    position top
     status_command i3status
     font pango:Hack-Regular 10
-	strip_workspace_numbers yes
+	  strip_workspace_numbers yes
 
-  colors{
+    colors{
      background #282828
      separator $bg-color
      focused_workspace $bg-color #282828 $text-color
-  #  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace $urgent-bg-color #282828 $urgent-bg-color
+     urgent_workspace $urgent-bg-color #282828 $urgent-bg-color
   }
 }
 
-exec_always feh --bg-scale /home/st4t1k/.wallpaper.jpg
-exec dunst
+exec_always feh --bg-scale /home/st4t1k/.background.jpg
 exec xset -b
 exec_always setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" 
