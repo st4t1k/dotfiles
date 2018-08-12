@@ -64,6 +64,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# multimedia keys
+bindsym XF86AudioRaiseVolume exec amixer set Master 3+
+bindsym XF86AudioLowerVolume exec amixer set Master 3-
+bindsym XF86AudioMute exec amixer set Master toggle
+
 # switch to workspace
 bindsym $mod+1 workspace 1:web
 bindsym $mod+2 workspace 2:dev
@@ -119,6 +124,7 @@ client.focused           $bg-color           $bg-color          $text-color     
 
 gaps outer 3
 gaps inner 5
+smart_gaps on
 
 bar {
 
@@ -135,5 +141,7 @@ bar {
 }
 
 exec_always feh --bg-scale /home/st4t1k/.background.jpg
+exec nm-applet
+exec dunst
 exec xset -b
 exec_always setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" 

@@ -33,7 +33,7 @@ set hidden
 "Theming
 let &t_Co=256
 set background=dark
-colorscheme Monokai
+colorscheme gruvbox
 set laststatus=2
 
 "GUI
