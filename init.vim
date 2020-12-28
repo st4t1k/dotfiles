@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rking/ag.vim'
@@ -11,6 +11,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-test/vim-test'
 Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 Plug 'morhetz/gruvbox'
+Plug 'st4t1k/vim-blade'
 
 call plug#end()
 filetype plugin indent on
@@ -21,18 +22,20 @@ set nobackup
 set noswapfile
 set number
 set relativenumber
+set cursorline
+
+"------------Colors--------------"
+colorscheme gruvbox
 set background=dark
 set termguicolors
-colorscheme gruvbox
-set cursorline
-set autoindent
-set smartindent
 
 "-----------Search---------------"
 set hlsearch
 set incsearch
 
-"----------Tab-Config------------"
+"--------Indent-Config-----------"
+set autoindent
+set smartindent
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -53,6 +56,7 @@ nnoremap <silent><leader>w :w<CR>
 nnoremap <silent><leader>q :bd<CR>
 "Toggle FZF
 nnoremap <silent><leader>p :Files<CR>
+"Toggle silver searcher
 nnoremap <leader>f :Ag<space>
 "vim-test
 nmap <silent> tn :TestNearest<CR>
@@ -62,21 +66,24 @@ nmap <silent> tf :TestFile<CR>
 nnoremap <silent><leader>c :PhpactorImportClass<CR>
 nnoremap <silent><leader>k :PhpactorGotoDefinition<CR>
 
+"Clear highlight
 nnoremap <silent><leader>nhl :nohlsearch<CR>
+
+"Remap window movement keys
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-L> <C-W><C-L>
 nmap <C-H> <C-W><C-H>
+
 inoremap jj <Esc>
 
-"-----------Auto-Commands--------"
+"----------Auto-Commands---------"
 augroup autosourcing
 autocmd!
 autocmd BufWritePost $MYVIMRC source %
 augroup END
 
 autocmd BufNewFile,BufEnter,BufRead *.theme,*.module set syntax=php
-autocmd BufNewFile,BufEnter,BufRead *.blade.php set filetype=html
 
 "Remove trailing spaces on write."
 autocmd BufWritePre * %s/\s\+$//e
