@@ -34,14 +34,11 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 cmp.setup({
-    -- snippet = {
-    --     expand = function(args)
-    --         vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-    --         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    --         vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    --         require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-    --     end,
-    -- },
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
     mapping = {
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -51,8 +48,9 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'vsnip' },
         { name = 'path' },
-        { name = 'buffer', keyword_length = 5 },
+        { name = 'buffer', keyword_length = 2 },
     },
     formatting = {
         format = lspkind.cmp_format {
@@ -61,6 +59,7 @@ cmp.setup({
                 buffer = '[BUF]',
                 nvim_lsp = '[LSP]',
                 path = '[PATH]',
+                vsnip = '[SNIP]',
             }
         }
     }
@@ -70,7 +69,14 @@ cmp.setup({
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require('lspconfig').intelephense.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+        intelephense = {
+            files = {
+                maxSize = 5000000
+            }
+        }
+    }
 }
 
 require('lspconfig').rust_analyzer.setup {
@@ -98,12 +104,43 @@ dap.configurations.php = {
 require('dapui').setup()
 
 local dap, dapui = require("dap"), require("dapui")
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end
+
+dap.listeners.after.continued["dapui_config"] = function()
+  dapui.open()
+end
+
 dap.listeners.before.event_terminated["dapui_config"] = function()
   dapui.close()
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+dap.listeners.before.disconnect["dapui_config"] = function()
+  dapui.close()
+end
+
+require("tmux").setup({
+    copy_sync = {
+        enable = true,
+    },
+    navigation = {
+        enable_default_keybindings = true,
+    },
+    resize = {
+        enable_default_keybindings = true,
+    }
+})
+
+require('nvim-tree').setup({
+    git = {
+        enable = true,
+        ignore = false,
+        timeout = 500,
+    }
+})
+
+require('lualine').setup()

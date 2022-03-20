@@ -14,6 +14,7 @@ vim.o.shiftwidth = 4
 -- Numbers
 vim.o.relativenumber = true
 vim.o.number = true
+vim.o.signcolumn = 'yes'
 
 -- Search
 vim.o.ignorecase = true
@@ -35,7 +36,4 @@ require("github-theme").setup({
   colors = {hint = "orange", error = "#ff0000"},
 })
 
-vim.o.laststatus = 1
-vim.o.showmode = false
-vim.o.showcmd = false
-vim.o.ruler = false
+vim.o.laststatus = 3

@@ -18,6 +18,9 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    use 'rafamadriz/friendly-snippets'
     use 'onsails/lspkind-nvim'
 
     -- Navigation plugins
@@ -33,17 +36,7 @@ return require('packer').startup(function()
     use 'cappyzawa/trim.nvim'
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-        config = function() require'nvim-tree'.setup {} end
-    }
-
-    -- Theme plugins
-    use 'kyazdani42/nvim-web-devicons'
-    use 'rebelot/kanagawa.nvim'
+    use 'kyazdani42/nvim-tree.lua'
 
     -- Syntax plugins
     use 'posva/vim-vue'
@@ -52,6 +45,13 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
+    }
+
+    use "aserowy/tmux.nvim"
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
 end)
